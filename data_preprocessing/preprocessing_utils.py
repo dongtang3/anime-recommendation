@@ -7,8 +7,8 @@ anime_df = pd.read_csv('../dataset/anime.csv')
 rating_df = pd.read_csv('../dataset/rating.csv')
 
 # Check for missing values in both datasets
-print(anime_df.isnull().sum())
-print(rating_df.isnull().sum())
+# print(anime_df.isnull().sum())
+# print(rating_df.isnull().sum())
 
 # Fill missing ratings in anime_df with the mean rating
 anime_df['rating'].fillna(anime_df['rating'].mean(), inplace=True)
