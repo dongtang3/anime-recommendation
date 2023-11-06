@@ -1,8 +1,8 @@
 from flask import Flask, request
 from flask_restful import Api
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from flask_login import LoginManager, login_required, logout_user
 
-from entity.User import User
+from backend.entity.User import User
 
 app = Flask(__name__)
 api = Api(app)

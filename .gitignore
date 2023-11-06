@@ -12,3 +12,4 @@
 .idea/**/libraries
 *.iws /out/
 .idea/
+/frontend/node_modules/

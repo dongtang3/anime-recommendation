@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 
 # Load datasets
-anime_df = pd.read_csv('../dataset/anime.csv')
-rating_df = pd.read_csv('../dataset/rating.csv')
+anime_df = pd.read_csv('../../dataset/anime.csv')
+rating_df = pd.read_csv('../../dataset/rating.csv')
 
 # Check for missing values in both datasets
 # print(anime_df.isnull().sum())
