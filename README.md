@@ -20,4 +20,3 @@ cd ..
 cd backend
 run main.py
 ```
-he
