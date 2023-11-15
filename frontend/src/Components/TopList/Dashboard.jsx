@@ -113,7 +113,6 @@ const fakeAnimeData = [
         description: '幕末时期外星人入侵后的滑稽和激烈生活。',
         imageId: 'gintama'
       },
-    // 更多动漫数据...
   ];
 
 // 用于获取动漫图片 URL 的函数
@@ -156,10 +155,6 @@ const AnimeList = () => {
 // Dashboard 组件
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
-
-  // theme.useToken 的具体实现需要根据您的项目情况来定
-  // 这里我将其注释掉，您可以根据实际情况添加
-//   const { token: { colorBgContainer } } = theme.useToken();
 
   return (
     <Layout>
@@ -210,7 +205,6 @@ const Dashboard = () => {
             margin: '24px 16px',
             padding: 24,
             minHeight: 280,
-            // background: colorBgContainer, // 确保这里的颜色变量是有效的
           }}
         >
           <AnimeList />
