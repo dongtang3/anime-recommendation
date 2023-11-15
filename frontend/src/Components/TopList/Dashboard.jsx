@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Button, List, Card } from 'antd';
 import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, VideoCameraOutlined, UploadOutlined } from '@ant-design/icons';
-import { useNavigate } from "react-router-dom"; // 用于导航
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { API_ENDPOINT } from '../../config'; // 确保已经导入 API_ENDPOINT
+import { API_ENDPOINT } from '../../config';
 
 const { Header, Sider, Content } = Layout;
 
-// 模拟的动漫数据数组
+// Simulated array of anime data
 const fakeAnimeData = [
     {
       id: 1,
@@ -115,12 +115,12 @@ const fakeAnimeData = [
       },
   ];
 
-// 用于获取动漫图片 URL 的函数
+// Function to get fake anime image URLs (not working)
 function getFakeImageUrl(anime) {
   return `https://fakeimage.com/${anime.imageId}.jpg`;
 }
 
-// AnimeList 组件
+// AnimeList component
 const AnimeList = () => {
   const navigate = useNavigate();
   const [animeList] = useState(fakeAnimeData);
@@ -152,7 +152,7 @@ const AnimeList = () => {
   );
 };
 
-// Dashboard 组件
+// Dashboard component
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
 
