@@ -1,12 +1,13 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_restful import Api
 from flask_login import LoginManager, login_required, logout_user
 
-from backend.entity.User import User
-
+from entity.User import User
+from models.content_based import get_anime_recommendations
+from flask_cors import CORS
 app = Flask(__name__)
 api = Api(app)
-
+CORS(app)
 login_manager = LoginManager()
 # login_manager.login_view = 'login'
 login_manager.login_view = "users.login"
@@ -61,6 +62,16 @@ def logout():
     logout_user()
     return "Logged out!"
 
+@app.route('/get_recommendations', methods=['GET'])
+def get_recommendations():
+    anime_title = request.args.get('title', '')
+    recommendations = get_anime_recommendations(anime_title)
+    # Checks if the return value is a string, i.e. no match was found
+    if isinstance(recommendations, str):
+        return jsonify({'error': recommendations}), 404
+    
+    # If a DataFrame is returned, convert it to a dictionary and return it in JSON format
+    return jsonify(recommendations.to_dict('records'))
 
 if __name__ == "__main__":
     app.run(debug=True)
