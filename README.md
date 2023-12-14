@@ -3,7 +3,7 @@
 ## Features
     Anime recommendation based on search query.
     recommending animes that are similar to the user's choice and providing additional information like ratings and similarity metrics.
-    
+    Anime Search Functionality.
 ## Structure
 
 ```
@@ -38,10 +38,9 @@ cd ..
 
 
 ### Backend requirements
-```
-cd backend
-run main.py
-```
+Make sure the backend has installed the dependencies
+
+Find the main.py file and right-click run.
 
 Navigate to http://localhost:3000 in your browser to access the web application
 
