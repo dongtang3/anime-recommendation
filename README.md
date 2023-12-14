@@ -11,6 +11,7 @@ First, you need to install the requirements for the project.
 ```
 cd frontend
 npm install
+npm start
 cd ..
 ```
 
