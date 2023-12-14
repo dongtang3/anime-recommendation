@@ -2,7 +2,8 @@
 
 ## Features
     Anime recommendation based on search query.
-
+    recommending animes that are similar to the user's choice and providing additional information like ratings and similarity metrics.
+    
 ## Structure
 
 ```
