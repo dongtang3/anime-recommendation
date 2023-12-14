@@ -10,7 +10,9 @@ app = Flask(__name__)
 CORS(app)
 
 # Loading animated datasets
-anime_data = pd.read_csv('D:/Desktop/WPI/IR/project/archive/anime.csv')
+
+# anime_data = pd.read_csv('D:/Desktop/WPI/IR/project/archive/anime.csv')
+anime_data = pd.read_csv("D://DS547/anime-recommendation/dataset/anime.csv")
 anime_data = anime_data[0:15000]
 anime_data = anime_data.dropna(subset=['rating'])
 # Data cleaning function for animated titles

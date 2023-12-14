@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_restful import Api
 from flask_login import LoginManager, login_required, logout_user
 
+from backend.core.recommendation import get_random_recommendation
 from entity.User import User
 from models.content_based import get_anime_recommendations
 from flask_cors import CORS
@@ -72,6 +73,16 @@ def get_recommendations():
     
     # If a DataFrame is returned, convert it to a dictionary and return it in JSON format
     return jsonify(recommendations.to_dict('records'))
+
+
+@app.route('/random_recommendation', methods=['GET'])
+def random_recommendation():
+    selected_anime,recommendations = get_random_recommendation()
+
+    # If a DataFrame is returned, convert it to a dictionary and return it in JSON format
+    return jsonify({'selected_anime': selected_anime, 'recommendations': recommendations})
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
